@@ -26,13 +26,20 @@
 
 			<div id="show-number"></div>
 
-			<p class="question">1. .........</p>
+			<p class="question">1. The 1986 Movie "Rad" is about skateboarding.</p>
 			<ul class="answers">
 				<input type="radio" name="q1" value="a" id="q1a"><label for="q1a">True</label><br/>
-				<input type="radio" name="q1" value="a" id="q1a"><label for="q1a">False</label>
+				<input type="radio" name="q1" value="b" id="q1b"><label for="q1b">False</label>
 			</ul>
 
 			<button type="button" id="submit">Submit your answers</button>
+
+			<div  id="results">
+				<h2 id="correct">Correct Answers: </h2>
+				<h2 id="wrong">Wrong Answers: </h2>
+			</div>
+
+			<button type="button" id="restart">Play Again</button>
 
 		</section>
 	</div>
@@ -44,7 +51,7 @@
 	</footer>
 
 	<!-- Javascript File & jQuery Lib -->
-	<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script type="text/javascript" src="assets/javascript/app.js"></script>
 	
 

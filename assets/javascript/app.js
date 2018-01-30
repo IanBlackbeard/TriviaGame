@@ -6,6 +6,7 @@ $(document).ready(function(){
 	$("#restart").hide();
 	$("#correct").hide();
 	$("#wrong").hide();
+	console.log($("#wrong"))
 
 	var number = 15;
 	var userGuessCorrect = 0;
@@ -79,10 +80,10 @@ $(document).ready(function(){
 			$(".question").show();
 			$(".answers").show();
 			number =15;
-			userGuessCorrect = 0;
-			$('#correct').text(userGuessCorrect);
-			userGuessWrong = 0;
-			$('#wrong').text(userGuessWrong);
+			// userGuessCorrect = 0;
+			// $('#correct').text(userGuessCorrect);
+			// userGuessWrong = 0;
+			// $('#wrong').text(userGuessWrong);
 			start();
 		}
 
@@ -107,11 +108,11 @@ $(document).ready(function(){
 
 		function correctCounter(){
 			userGuessCorrect++;
-			$('#correct').html(userGuessCorrect);
+			$('#correct').html("Correct: " + userGuessCorrect);
 		}
 		function wrongCounter(){
 			userGuessWrong++;
-			$('#wrong').html(userGuessWrong);
+			$('#wrong').html("Wrong: " + userGuessWrong);
 		}
 	
 });

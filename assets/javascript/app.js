@@ -7,7 +7,7 @@ $(document).ready(function(){
 	$("#correct").hide();
 	$("#wrong").hide();
 
-	var number = 10;
+	var number = 15;
 	var userGuessCorrect = 0;
 	var userGuessWrong = 0;
 
@@ -26,13 +26,12 @@ $(document).ready(function(){
 			$("#restart").hide();
 			$(".question").show();
 			$(".answers").show();
-			$("#submit").show();	
+			$("#submit").show();
 		}
 
 		//Called when user clicks start
 		function timer(){
 			number--
-//	//	//	//Find way to display timer in its own container after start button is clicked.
 			$("#show-number").html("<h2>" + number + "</h2>");
 			if (number === 0){
 				alert("Time... is... UP!")
@@ -43,7 +42,6 @@ $(document).ready(function(){
 		//Called when timer runs out
 		function stop(){
 			clearInterval(counter);
-			// $(".results").show();
 			$("#show-number").hide();
 			$(".question").hide();
 			$(".answers").hide();
@@ -56,7 +54,6 @@ $(document).ready(function(){
 		//Called when user clicks <submit>
 		function submit(){
 			clearInterval(counter);
-			// number = 0;
 			$("#show-number").hide();
 			$(".question").hide();
 			$(".answers").hide();
@@ -81,7 +78,7 @@ $(document).ready(function(){
 			$("#wrong").hide();
 			$(".question").show();
 			$(".answers").show();
-			number =10;
+			number =15;
 			userGuessCorrect = 0;
 			$('#correct').text(userGuessCorrect);
 			userGuessWrong = 0;
@@ -92,17 +89,19 @@ $(document).ready(function(){
 		//click function for radio buttons
 		//sets variables
 		//then appends to score counter
+		//I can't seem to get this to work right. It counts every click and somehow 
+		 //shows the score counter on the start page even though its hidden on page load.
+
+
 
 		$('#q1a').on('click', function (){
-		
 			$("#q2a").prop("checked", false);
-			console.log("Denver");
+			console.log("1976");
 			correctCounter();
 		})
-		$('#q1b').on('click', function (){
-			
+		$('#q1b').on('click', function (){	
 			$("#q1a").prop("checked", false);
-			console.log("Aurora");
+			console.log("1980");
 			wrongCounter();
 		})
 
@@ -114,17 +113,6 @@ $(document).ready(function(){
 			userGuessWrong++;
 			$('#wrong').html(userGuessWrong);
 		}
-		
-		// //Correct answer counter
-		// function correct(){
-		// 	userGuessCorrect++;
-		// }
-
-		// //Correct answer counter
-		// function wrong(){
-		// 	userGuessWrong++;
-		// 	console.log(userGuessWrong)
-		// }
 	
 });
 

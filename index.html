@@ -17,26 +17,39 @@
 
 	<div id="main-container" class="container">
 		<section class="main-section">
-			<h1 class="rules">The Rules of the game</h1>
-			<p class="rules">There are 5 questions, you have 60 seconds to answer all 5 questions. Good Luck!</p>
+			
+			<!-- Page one -->
+			<h1 class="rules">
+			The Rules of the game</h1>
+			<p class="rules1">
+			There are 5 questions, you have 60 seconds to answer all 5 questions. Good Luck!</p>
+			<button type="button" id="start-button">Start!</button>
 
-			<h2>
-				<button type="button" id="start-button">Start!</button>
-			</h2>
-
+			<!-- Page two -->
 			<div id="show-number"></div>
-
-			<p class="question">1. The 1986 Movie "Rad" is about skateboarding.</p>
+			<p class="question">
+			1. What is the capitol of Colorado?.</p>
 			<ul class="answers">
-				<input type="radio" name="q1" value="a" id="q1a"><label for="q1a">True</label><br/>
-				<input type="radio" name="q1" value="b" id="q1b"><label for="q1b">False</label>
+				<input type="radio" name="question1" value="Denver" id="q1a">Denver<br/>
+				<input type="radio" name="question1" value="Aurora" id="q1b">Aurora
 			</ul>
-
 			<button type="button" id="submit">Submit your answers</button>
 
-			<div  id="results">
+			<!-- Page three -->
+			<!-- <div>
 				<h2 id="correct">Correct Answers: </h2>
 				<h2 id="wrong">Wrong Answers: </h2>
+			</div> -->
+
+			<div>
+				<h2>Correct:
+					<span id="correct"></span>
+				</h2>
+			</div>
+			<div>
+				<h2>Wrong:
+					<span id="wrong"></span>
+				</h2>
 			</div>
 
 			<button type="button" id="restart">Play Again</button>
@@ -44,14 +57,15 @@
 		</section>
 	</div>
 
-	<footer id="" class="">
+	<!-- <footer id="" class="">
 		<div class="container">
 			&copy; Copyright 2018 IanBlackbeard
 		</div>
-	</footer>
+	</footer> -->
 
 	<!-- Javascript File & jQuery Lib -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<!-- <script type="text/javascript" src="assets/javascript/question.js"></script> -->
 	<script type="text/javascript" src="assets/javascript/app.js"></script>
 	
 

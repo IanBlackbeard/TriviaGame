@@ -7,34 +7,32 @@ $(document).ready(function(){
 	$("#correct").hide();
 	$("#wrong").hide();
 
-	$("#start-button").click(function(){
-		alert("Let's Go!!!")
+	var number = 10;
+	var userGuessCorrect = 0;
+	var userGuessWrong = 0;
 
-		var number = 4;
-		var correct = 0;
-		var wrong = 0;
-		var q1 = false;
+	// var QandA = []
 
-		$(".question").hide();
-		$(".answer").hide();
-
-		$('#start-button').on('click', start)
-		$('#submit').on('click', finish)
-		$('#restart').on('click', restart)
+	$('#start-button').on('click', start)
+	$('#submit').on('click', submit)
+	$('#restart').on('click', restart)
 
 		//Called when user clicks start
 		function start(){
 			counter = setInterval(timer, 1000);
 			$("#start-button").hide();
 			$(".rules").hide();
+			$(".rules1").hide();
 			$("#restart").hide();
 			$(".question").show();
 			$(".answers").show();
 			$("#submit").show();	
 		}
+
 		//Called when user clicks start
 		function timer(){
 			number--
+//	//	//	//Find way to display timer in its own container after start button is clicked.
 			$("#show-number").html("<h2>" + number + "</h2>");
 			if (number === 0){
 				alert("Time... is... UP!")
@@ -50,38 +48,84 @@ $(document).ready(function(){
 			$(".question").hide();
 			$(".answers").hide();
 			$("#submit").hide();
-			//
 			$("#restart").show();
 			$("#correct").show();
 			$("#wrong").show();
 		}
 
 		//Called when user clicks <submit>
-		function finish(){
+		function submit(){
 			clearInterval(counter);
 			// number = 0;
 			$("#show-number").hide();
 			$(".question").hide();
 			$(".answers").hide();
 			$("#submit").hide();
-			//
 			$("#restart").show();
 			$("#correct").show();
-			$("#wrong").show();
+			$("#wrong").show();	
+			if (userTotal == compRandomNumber){
+				yay();
+			}
+			else if (userTotal > compRandomNumber){
+				loser();
+			}
+
 		}
 
-		//Called when button id is clicked. button shows up after time runs out 
+		//Called when button id is clicked. Button shows up after time runs out 
 		 //or when user clicks submit
 		function restart(){
 			$("#show-number").show();
 			$("#correct").hide();
 			$("#wrong").hide();
-			number =4;
+			$(".question").show();
+			$(".answers").show();
+			number =10;
+			userGuessCorrect = 0;
+			$('#correct').text(userGuessCorrect);
+			userGuessWrong = 0;
+			$('#wrong').text(userGuessWrong);
 			start();
 		}
 
-		start();
-	});
+		//click function for radio buttons
+		//sets variables
+		//then appends to score counter
+
+		$('#q1a').on('click', function (){
+		
+			$("#q2a").prop("checked", false);
+			console.log("Denver");
+			correctCounter();
+		})
+		$('#q1b').on('click', function (){
+			
+			$("#q1a").prop("checked", false);
+			console.log("Aurora");
+			wrongCounter();
+		})
+
+		function correctCounter(){
+			userGuessCorrect++;
+			$('#correct').html(userGuessCorrect);
+		}
+		function wrongCounter(){
+			userGuessWrong++;
+			$('#wrong').html(userGuessWrong);
+		}
+		
+		// //Correct answer counter
+		// function correct(){
+		// 	userGuessCorrect++;
+		// }
+
+		// //Correct answer counter
+		// function wrong(){
+		// 	userGuessWrong++;
+		// 	console.log(userGuessWrong)
+		// }
+	
 });
 
 //Start page with button to start the game
@@ -90,5 +134,6 @@ $(document).ready(function(){
 
 //Done button on bottom to trigger next page with totals
 //4-5 option mutiple choices under the Q in form of radio button 
-//If time runs out new, page shows with correct answers, incorrect answers, unanswered all listed respectively
+//If time runs out new, page shows with correct answers, incorrect answers, 
+  //unanswered all listed respectively
   // wether or not all or answered or not.

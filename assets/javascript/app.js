@@ -62,13 +62,6 @@ $(document).ready(function(){
 			$("#restart").show();
 			$("#correct").show();
 			$("#wrong").show();	
-			if (userTotal == compRandomNumber){
-				yay();
-			}
-			else if (userTotal > compRandomNumber){
-				loser();
-			}
-
 		}
 
 		//Called when button id is clicked. Button shows up after time runs out 
@@ -80,10 +73,10 @@ $(document).ready(function(){
 			$(".question").show();
 			$(".answers").show();
 			number =15;
-			// userGuessCorrect = 0;
-			// $('#correct').text(userGuessCorrect);
-			// userGuessWrong = 0;
-			// $('#wrong').text(userGuessWrong);
+			userGuessCorrect = 0;
+			$('#correct').text(userGuessCorrect);
+			userGuessWrong = 0;
+			$('#wrong').text(userGuessWrong);
 			start();
 		}
 
@@ -92,16 +85,17 @@ $(document).ready(function(){
 		//then appends to score counter
 		//I can't seem to get this to work right. It counts every click and somehow 
 		 //shows the score counter on the start page even though its hidden on page load.
-
+		var q1= $('input[name="q1a"]:checked').val();
+                console.log(q1);
 
 
 		$('#q1a').on('click', function (){
-			$("#q2a").prop("checked", false);
+			// $("#q2a").prop("checked", false);
 			console.log("1976");
 			correctCounter();
 		})
 		$('#q1b').on('click', function (){	
-			$("#q1a").prop("checked", false);
+			// $("#q1a").prop("checked", false);
 			console.log("1980");
 			wrongCounter();
 		})
